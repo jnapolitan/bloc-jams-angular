@@ -2,6 +2,8 @@
      function SongPlayer($rootScope, Fixtures) {
          var SongPlayer = {};
 
+         var currentAlbum = Fixtures.getAlbum();
+
          /**
           * @desc Buzz object audio file
           * @type {Object}
