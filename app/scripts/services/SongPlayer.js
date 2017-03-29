@@ -33,12 +33,6 @@
              });
 
              SongPlayer.currentSong = song;
-
-             /**
-              * @desc Current playback time (in seconds) of currently playing song
-              * @type {Number}
-              */
-             SongPlayer.currentTime = null;
          };
 
          /**
@@ -87,6 +81,18 @@
           */
 
          SongPlayer.currentSong = null;
+
+         /**
+          * @desc Current playback time (in seconds) of currently playing song
+          * @type {Number}
+          */
+         SongPlayer.currentTime = null;
+
+         /**
+          * @desc Current playback volume (from 0-100) of currently playing song
+          * @type {Number}
+          */
+         SongPlayer.volume = 50;
 
          /**
           * @function SongPlayer.play
@@ -166,6 +172,18 @@
                  currentBuzzObject.setTime(time);
              }
          };
+
+         /**
+          * @function setVolume
+          * @desc Set current volume (from 0-100) of currently playing song
+          * @param {Number} volume
+          */
+         SongPlayer.setVolume = function (volume) {
+             if (currentBuzzObject) {
+                 currentBuzzObject.setVolume(volume);
+             }
+         };
+
 
          return SongPlayer;
      }
